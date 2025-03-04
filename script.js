@@ -121,6 +121,17 @@ document.addEventListener("DOMContentLoaded", () => {
         alert("Thanks for playing!");
         window.close();
     });
+#game {
+    background-image: url('images/background.jpg');
+}
+
+.fish {
+    background-image: url('images/fish1.jpg');
+}
+
+#electric-plant {
+    background-image: url('images/electric.jpg');
+}
 
     // Save High Score to Local Storage
     function saveScore(score) {
