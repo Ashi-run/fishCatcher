@@ -121,17 +121,35 @@ document.addEventListener("DOMContentLoaded", () => {
         alert("Thanks for playing!");
         window.close();
     });
-#game {
-    background-image: url('images/background.jpg');
+const catchSound = new Audio('sounds/catch.mp3');
+const electricSound = new Audio('sounds/electric.mp3');
+const gameOverSound = new Audio('sounds/gameover.mp3');
+const clickSound = new Audio('sounds/click.mp3');
+const bgMusic = new Audio('sounds/bg-music.mp3');
+
+// Play background music on game start
+bgMusic.loop = true;
+bgMusic.play();
+
+function playCatchSound() {
+    catchSound.play();
 }
 
-.fish {
-    background-image: url('images/fish1.jpg');
+function playElectricSound() {
+    electricSound.play();
 }
 
-#electric-plant {
-    background-image: url('images/electric.jpg');
+function playGameOverSound() {
+    gameOverSound.play();
 }
+
+function playClickSound() {
+    clickSound.play();
+}
+fishElement.addEventListener("click", () => {
+    playCatchSound();
+    increaseScore();
+});
 
     // Save High Score to Local Storage
     function saveScore(score) {
